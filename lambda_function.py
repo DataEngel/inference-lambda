@@ -8,7 +8,7 @@ payload = {
 }
 
 def lambda_handler(event, context):
-    my_model = load('/model_risk.joblib')
+    my_model = load('model_risk.joblib')
     result = my_model.predict([payload['5008807']]) 
     print(result)
 
