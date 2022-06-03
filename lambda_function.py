@@ -1,8 +1,16 @@
-import pandas as pd
+from joblib import load
+
+import warnings
+warnings.filterwarnings('ignore')
+
+payload = {
+    '5008807': [65, 0, 1, 10000, 1]
+}
 
 def lambda_handler(event, context):
-    d = {'col1': [1,2], 'col2': [3,4]}
-    df = pd.DataFrame(data=d)
-    print(df)
-    print('Done x1.1')
-    
+    my_model = load('./model_risk.joblib')
+    result = my_model.predict([payload['5008807']]) 
+    print(result)
+
+
+lambda_handler(payload, context=None)
