@@ -1,10 +1,5 @@
-import pandas as pd
-import io
-import os
 import boto3
-import pickle  
-import json  
-from joblib import dump, load
+from joblib import load
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -32,6 +27,6 @@ def lambda_handler(event, context):
 
     result = my_model.predict([d['5008807']])
 
-    print(result)
+    print("Model prediction ", result)
 
 lambda_handler(event={}, context=None)
