@@ -1,17 +1,18 @@
 import os
 
-import warnings
-warnings.filterwarnings('ignore')
+from os import listdir
+from os.path import isfile, join
 
-payload = {
-    '5008807': [65, 0, 1, 10000, 1]
-}
 
 def lambda_handler(event, context):
 
     cwd = os.getcwd()
     
-    print(cwd)
+    print("Acual path: ", cwd)
 
+    mypath = cwd
 
-lambda_handler(payload, context=None)
+    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+    print("List of path ", onlyfiles)
+    
