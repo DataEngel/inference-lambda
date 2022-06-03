@@ -6,7 +6,7 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - pip install -U scikit-learn lib
-      - pip install -r requirements.txt -t lib
+      - pip install boto3
   build:
     commands:
       - echo "Zipping deployment package..."
