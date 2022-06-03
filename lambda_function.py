@@ -7,6 +7,8 @@ from os.path import isfile, join
 def lambda_handler(event, context):
 
     cwd = os.getcwd()
+
+    print("Event 1", event)
     
     print("Acual path: ", cwd)
 
@@ -14,5 +16,6 @@ def lambda_handler(event, context):
 
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
+    print("Event 2", event)
+
     print("List of path ", onlyfiles)
-    
