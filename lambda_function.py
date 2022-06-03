@@ -1,4 +1,4 @@
-from joblib import load
+import os
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -8,9 +8,10 @@ payload = {
 }
 
 def lambda_handler(event, context):
-    my_model = load('/tmp/model_risk.joblib')
-    result = my_model.predict([payload['5008807']]) 
-    print(result)
+
+    cwd = os.getcwd()
+    
+    print(cwd)
 
 
 lambda_handler(payload, context=None)
