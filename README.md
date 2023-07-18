@@ -34,4 +34,3 @@ Example:
 
 * [API to serve functions to a lambda](https://github.com/DataEngel/inference-lambda)
 * [Feature engineering lambda](https://github.com/DataEngel/feature-engineering-lambda)
-* [Inference lambda docker](https://github.com/DataEngel/inference-lambda-docker)
